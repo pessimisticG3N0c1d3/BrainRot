@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini Text Prompt Generator</title>
+  <script type="importmap">
+    {
+      "imports": {
+        "@google/generative-ai": "https://esm.run/@google/generative-ai"
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Gemini Text Prompt Generator</h1>
+  <p>Enter a prompt and let Gemini's creativity flow!</p>
+  <label for="prompt">Prompt:</label>
+  <textarea id="prompt" rows="5" placeholder="Write your prompt here..."></textarea>
+  <br>
+  <button id="generateButton" disabled>Generate Text</button>
+  <pre id="response"></pre>
+
+  <script type="module">
+    import { GoogleGenerativeAI } from "@google/generative-ai";
+
+    // Replace with your Gemini API key (secure it properly)
+    const API_KEY = "AIzaSyCYARqHZ8gWEjrdWXG36kF0q745dqM4_AI";
+
+    let genAI; // Initialize later, after API key check
+
+    // Check if API key is present before enabling the button
+    if (API_KEY) {
+      genAI = new GoogleGenerativeAI(API_KEY);
+      document.getElementById("generateButton").disabled = false;
+    } else {
+      console.error("Please provide your Gemini API key!");
+    }
+
+    const promptElement = document.getElementById("prompt");
+    const responseElement = document.getElementById("response");
+    const generateButton = document.getElementById("generateButton");
+
+    generateButton.addEventListener("click", async () => {
+      const prompt = promptElement.value.trim();
+      if (prompt === "") {
+        alert("Please enter a prompt!");
+        return;
+      }
+
+      try {
+        const response = await genAI.getGenerativeModel({ model: "gemini-pro" }).generateContent({ prompt });
+        responseElement.textContent = response.text;
+      } catch (error) {
+        console.error(error);
+        responseElement.textContent = "Error: An error occurred during generation.";
+      }
+    });
+  </script>
+</body>
+</html>
