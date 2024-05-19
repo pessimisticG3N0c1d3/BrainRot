@@ -164,7 +164,7 @@
 		{ question: "What is the solution to the equation 2x - 5 = 15?", answer: "x = 10" }
 	   ],
 	   
-		"General World history": [
+		"General World History": [
 		{ question: "Who was the first emperor of ancient Rome?", answer: "Augustus Caesar" },
 		{ question: "Which ancient civilization built the pyramids?", answer: "Ancient Egyptians" },
 		{ question: "Who was the founder of Buddhism?", answer: "Siddhartha Gautama (Buddha)" },
