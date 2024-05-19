@@ -9,82 +9,68 @@
   </head>
   <body>
     <i class="fa fa-pencil-square" aria-hidden="true"></i>
-    <div id="first-page">
-      <div class="content">
-        <h1>BrainRot</h1>
-        <h1>QUIZ GENERATOR</h1>
-      </div>
-      <center>
-        <button class="start-button" onclick="showSubjects()">START</button>
-      </center>
-      <br />
-      <br />
-      <br />
-      <br />
-      <p>
-        PS. YOU HAVE 1 MINUTE TO ANSWER EACH QUESTION FOR GENERAL HISTORY, AND
-        PHILOSOPHY, AND 2 MINUTES TO ANSWER MATHEMATICS AND SCIENCE.
-      </p>
+     <div id="first-page">
+    <div class="content">
+      <h1>BrainRot</h1>
+      <h1>QUIZ GENERATOR</h1>
     </div>
+    <center>
+      <button class="start-button" onclick="showSubjects()">START</button>
+	  <p>NOTE: ALWAYS START WITH A CAPITAL LETTER WHEN TAKING A QUIZ IN HISTORY AND PHILOSOPHY</p>
+    </center>
+  </div>
 
-    <div id="subject-selection" style="display: none">
-      <center>
-        <h1>SELECT SUBJECT</h1>
-        <br />
-        <br />
-        <br />
-        <button class="subject-button" onclick="selectSubject('science')">
-          SCIENCE
-        </button>
-        <br />
-        <button class="subject-button" onclick="selectSubject('math')">
-          MATHEMATICS
-        </button>
-        <br />
-        <button class="subject-button" onclick="selectSubject('history')">
-          GENERAL WORLD HISTORY
-        </button>
-        <br />
-        <button class="subject-button" onclick="selectSubject('philosophy')">
-          PHILOSOPHY
-        </button>
-        <br />
-        <br />
-        <br />
-        <button class="proceed-button" onclick="showTopicSelection()">
-          PROCEED
-        </button>
-      </center>
-    </div>
+  <div id="subject-selection" style="display: none" class="question-list-animation">
+  <center>
+    <h1>SELECT SUBJECT</h1>
+ <button class="subject-button" onclick="selectSubject('General science', event)">GENERAL SCIENCE</button>
 
-    <div id="topic-selection" style="display: none">
-      <center>
-        <h1>SELECT TOPIC</h1>
-        <div id="topics-list"></div>
-        <br />
-        <button class="proceed-button" onclick="showInputQuestion()">
-          PROCEED
-        </button>
-      </center>
-    </div>
+    <br>
+    <button class="subject-button" onclick="selectSubject('Mathematics', event)">MATHEMATICS</button>
+    <br>
+    <button class="subject-button" onclick="selectSubject('General World History', event)">GENERAL WORLD HISTORY</button>
+    <br>
+    <button class="subject-button" onclick="selectSubject('Philosophy', event)">PHILOSOPHY</button>
+    <br>
+    <br>
+    <button class="proceed-button" onclick="showInputQuestion()">PROCEED</button>
+  </center>
+</div>
 
-    <div id="input-question" style="display: none">
-      <center>
-        <h1>INPUT YOUR DESIRED NUMBER OF QUESTIONS</h1>
-        <input type="number" id="quantity" name="Num" />
-        <br />
-        <button class="proceed-button" onclick="beginQuiz()">BEGIN QUIZ</button>
-      </center>
-    </div>
-    <div id="quiz-area" style="display: none">
-      <center>
+  <div id="input-question" style="display: none" class="question-list-animation">
+    <center>
+      <h1>INPUT YOUR DESIRED NUMBER OF QUESTIONS</h1>
+      <input type="number" id="quantity" name="Num" />
+	<br>
+    <br>
+      <button class="proceed-button" onclick="beginQuiz()">BEGIN QUIZ</button>
+    </center>
+  </div>
+
+  <div id="quiz-area" style="display: none" class="question-list-animation">
+    <center>
         <h1>SELECTED SUBJECT: <span id="selected-subject"></span></h1>
-        <h1>SELECTED TOPIC: <span id="selected-topic"></span></h1>
-        <div id="question-list"></div>
-        <input type="text" id="txt" name="texts" />
-        <br />
-        <button class="submit-button">SUBMIT</button>
-      </center>
-    </div>
+        <div id="question-list" class="question-list-animation"></div>
+        <button class="submit-button" onclick="showResults()">SUBMIT</button>
+    </center>
+</div>
+
+  <div id="results" style="display: none" class="question-list-animation">
+    <center>
+        <h1>RESULTS</h1>
+        <div id="result-list"></div>
+        <button class="exit-button" onclick="exitToMenu()">EXIT TO MENU</button>
+        <button class="analyze-button" onclick="showAnalysis()">ANALYZE</button>
+    </center>
+</div>
+
+<div id="analysis" style="display: none" class="question-list-animation">
+    <center>
+        <h1>ANALYSIS</h1>
+        <h1 id="analysis-message"></h1>
+		<h1 id="percentage"></h1>
+        <button class="back-button" onclick="backToResults()">BACK TO RESULTS</button>
+    </center>
+</div>
   </body>
 </html>
