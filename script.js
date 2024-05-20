@@ -207,7 +207,7 @@
 		{ question: "Who was the first female Prime Minister of India?", answer: "Indira Gandhi" },
 		{ question: "Which ancient civilization is known for its invention of democracy?", answer: "Ancient Greece" },
 		{ question: "Who was the first African-American president of the United States?", answer: "Barack Obama" },
-		{ question: "What was the name of the ancient trade route that connected China with the Roman Empire?", answer: "Silk Road" },
+		{ question: "What was the name of the ancient trade route that connected China with the Roman Empire?", answer: "Silk Road", answer:"Silk road", answer:"silk road", answer:"silk Road" },
 		{ question: "Who was the leader of the Russian Revolution in 1917?", answer: "Vladimir Lenin" },
 		{ question: "What was the main purpose of the Marshall Plan?", answer: "Rebuilding Europe after World War II" },
 		{ question: "Who was the leader of the Haitian Revolution?", answer: "Toussaint Louverture" },
